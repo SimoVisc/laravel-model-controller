@@ -18,13 +18,22 @@
 <body>
 
     <main>
-        <h1> Homepage </h1>
-        <ul>
+        <div class="page-title bg-info w-100 d-flex justify-content-center ">
+            <h1 class="text-light"> Movies </h1>
+        </div>
+        <div class="container d-flex flex-wrap justify-content-center ">
             @foreach ($movies as $movie)
-                <li> {{ $movie->title }}</li>
+                <div class="card m-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3 class="card-title"> {{ $movie->title }}</h3>
+                        <p class="card-text"><strong>Titolo originale:</strong>{{ $movie->original_title }}</p>
+                        <p class="card-text"><strong>Nazionalità:</strong>{{ $movie->nationality }}</p>
+                        <p class="card-text"><strong>Voto:</strong> {{ $movie->vote }}</p>
+                    </div>
+                </div>
             @endforeach
+        </div>
 
-        </ul>
     </main>
 
 </body>
